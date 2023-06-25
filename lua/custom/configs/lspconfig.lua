@@ -1,4 +1,6 @@
 local util = require 'lspconfig.util'
+local on_attach = require("plugins.configs.lspconfig").on_attach
+local capabilities = require("plugins.configs.lspconfig").capabilities
 local function get_typescript_server_path(root_dir)
 
   local global_ts = '/Users/jackchapman/.volta/tools/image/packages/typescript/lib/node_modules/typescript/lib'
@@ -19,6 +21,8 @@ local function get_typescript_server_path(root_dir)
 end
 
 require'lspconfig'.volar.setup{
+  on_attach = on_attach,
+  capabilities = capabilities,
   filetypes = {'typescript', 'javascript', 'vue', 'json'},
   on_new_config = function(new_config, new_root_dir)
     new_config.init_options.typescript.tsdk = get_typescript_server_path(new_root_dir)

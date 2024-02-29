@@ -1,5 +1,7 @@
----@type ChadrcConfig 
- local M = {}
- M.ui = {theme = 'chadracula'}
- M.plugins = "custom.plugins"
- return M
+---@type ChadrcConfig
+local M = {}
+
+M.ui = {theme = 'rosepine'}
+M.plugins = "custom.plugins"
+
+return M

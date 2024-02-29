@@ -1,8 +1,9 @@
 local util = require 'lspconfig.util'
+local lspconfig = require 'lspconfig'
 local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
-local function get_typescript_server_path(root_dir)
 
+local function get_typescript_server_path(root_dir)
   local global_ts = '/Users/jackchapman/.volta/tools/image/packages/typescript/lib/node_modules/typescript/lib'
   -- Alternative location if installed as root:
   -- local global_ts = '/usr/local/lib/node_modules/typescript/lib'
@@ -20,7 +21,7 @@ local function get_typescript_server_path(root_dir)
   end
 end
 
-require'lspconfig'.volar.setup{
+lspconfig.volar.setup{
   on_attach = on_attach,
   capabilities = capabilities,
   filetypes = {'typescript', 'javascript', 'vue', 'json', 'css', 'scss', 'sass'},
@@ -29,3 +30,8 @@ require'lspconfig'.volar.setup{
   end,
 }
 
+lspconfig.solargraph.setup{}
+
+lspconfig.rubocop.setup{}
+
+lspconfig.gopls.setup{}

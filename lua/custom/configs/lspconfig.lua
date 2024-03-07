@@ -30,8 +30,17 @@ lspconfig.volar.setup{
   end,
 }
 
-lspconfig.solargraph.setup{}
+lspconfig.solargraph.setup{
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
 
-lspconfig.rubocop.setup{}
+lspconfig.rubocop.setup{
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
 
-lspconfig.gopls.setup{}
+lspconfig.gopls.setup{
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
